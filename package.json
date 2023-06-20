@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node ./bin/index.js"
   },
   "bin": {
     "pixelite": "./bin/index.js"
