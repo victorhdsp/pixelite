@@ -1,5 +1,5 @@
 {
-  "name": "conversor-de-imagens",
+  "name": "pixelite",
   "version": "1.0.0",
   "description": "Modulo de compressão de imagens",
   "main": "index.js",
