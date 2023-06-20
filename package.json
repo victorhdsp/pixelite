@@ -14,5 +14,8 @@
   },
   "author": "lkt226 <victorhugods.pereira@gmail.com>",
   "license": "MIT",
-  "preferGlobal": false
+  "preferGlobal": false,
+  "dependencies": {
+    "sharp": "^0.32.1"
+  }
 }
