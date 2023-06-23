@@ -4,6 +4,7 @@ O objetivo desse modulo é simplificar meu dia a dia, como desenvolvedor fronten
 
 
 ## Funcionamento
+* Recomendo fortemente que você gere um backup das imagens antes de usar por precaução, porque como é um plugin pessoal, ele não foi la muito testado, até agora não rolou nenhum problema, mas pode rolar ❤️ *
 
 O modulo funciona da seguinte forma, você pode instalar ele globalmente, e passar o Path da sua "public" com as imagens, ou a forma que eu prefiro é instalar ele localmente, e colocar ele pra iniciar junto ao "Nuxt Generate" (Na empresa que trabalho utilizamos nuxt).
 
