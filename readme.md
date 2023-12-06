@@ -19,13 +19,16 @@ O modulo funciona da seguinte forma, você pode instalar ele globalmente, e pass
       #package.json
         ...
         "scripts": {
-            "pixilite": "pixilite"
+            ~~"pixilite": "pixilite"~~
+            "generate": "nuxt generate && pixelite --src=/.output/public",
         }
         ...
     ```
 
-Ele vai gerar os arquivos e colocar devolta na "public", porem vai criar um "public-backup" com os arquivos antigos.
+~~Ele vai gerar os arquivos e colocar devolta na "public", porem vai criar um "public-backup" com os arquivos antigos.~~
+
+Ele não gera mais backup dos arquivos e substitui a imagem original por uma versão comprimida, fica a seu cargo criar um backup se julgar necessário, removi essa função pois o "pixelite" foi projetado para funcionar com Framework então eu simplesmente passei o codigo para editar a "dist gerada" e não a pasta original, dessa forma não afeta meus arquivos e não pesa o projeto em produção. ❤️
 
 ### Argumentos
 * --src=./public: Diretorio onde estão as imagens.
-* --replace=false: Substitui as imagens que já são webp dentro do diretorio, por padrão as imagens que já tem uma versão WEBP são ignoradas. 
+* ~~--replace=false: Substitui as imagens que já são webp dentro do diretorio, por padrão as imagens que já tem uma versão WEBP são ignoradas. ~~
