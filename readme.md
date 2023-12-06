@@ -19,7 +19,6 @@ O modulo funciona da seguinte forma, você pode instalar ele globalmente, e pass
       #package.json
         ...
         "scripts": {
-            ~~"pixilite": "pixilite"~~
             "generate": "nuxt generate && pixelite --src=/.output/public",
         }
         ...
@@ -31,4 +30,3 @@ Ele não gera mais backup dos arquivos e substitui a imagem original por uma ver
 
 ### Argumentos
 * --src=./public: Diretorio onde estão as imagens.
-* ~~--replace=false: Substitui as imagens que já são webp dentro do diretorio, por padrão as imagens que já tem uma versão WEBP são ignoradas. ~~
