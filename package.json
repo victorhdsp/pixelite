@@ -1,8 +1,18 @@
 {
   "name": "pixelite",
   "description": "Comprime as imagens de um diretório especificado, cria um backup fora do diretorio com as imagens originais e substitui as imagens do diretório especificado pelas imagens comprimidas, adicionando tambem uma versão WEBP da imagem",
-  "version": "2.0.0",
+  "version": "3.0.2",
   "main": "./lib/index.js",
+  "keywords": [
+    "image",
+    "compress",
+    "compress image",
+    "pixelite",
+    "web image",
+    "webp",
+    "avif",
+    "convert image"
+  ],
   "directories": {
     "lib": "lib"
   },

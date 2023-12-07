@@ -13,7 +13,7 @@ O modulo funciona da seguinte forma, você pode instalar ele globalmente, e pass
     - $ npm install -g pixilite
     - $ pixilite --src=[seu-caminho]
 
-    2. localmente
+    2. localmente (exemplo NUXT)
     - $ npm install pixilite
     ```
       #package.json
