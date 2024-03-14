@@ -1,19 +1,16 @@
-const fs = require('fs/promises');
+import fs from 'fs/promises'
+import { deleteDir, copyFile, readAllDir, readDir } from './functions/folder'
+import { convertImage } from './functions/image'
+import { pathInput, pathOutput, typeImages } from './config'
 
-const { deleteDir, copyFile, readAllDir, readDir } = require('./functions/folder');
-const { convertImage } = require('./functions/image');
-const { pathInput, pathOutput, typeImages } = require('./config');
-
-const ConvertAllImagesInFolder = async (dir, options) => {
+const ConvertAllImagesInFolder = async (dir: string) => {
   console.log('Start converting process...')
-  options = {
-    ...options
-  }
 
   const inputFolder = await readDir(pathInput)
   const inputItems = (await readAllDir(inputFolder)).filter(item => item.type.match(typeImages))
 
   console.log(`Found ${inputItems.length} images`)
+  
   for (let i = 0; i < inputItems.length; i++) {
     const { path, name } = inputItems[i];
     await convertImage(path, name, 'png')
@@ -37,16 +34,16 @@ const ConvertAllImagesInFolder = async (dir, options) => {
   console.log('Finished converting process')
 }
 
-const SetUpEnvironment = async (dir) => {
+const SetUpEnvironment = async (dir: string) => {
   console.log(`Environment: ${dir}`)
   console.log('Setting up environment...')
   dir = dir.replace(/\/$/, '')
 
   await deleteDir(pathInput)
-  await fs.mkdir(pathInput, { recursive: true }, () => { })
+  await fs.mkdir(pathInput, { recursive: true })
 
   await deleteDir(pathOutput)
-  await fs.mkdir(pathOutput, { recursive: true }, () => { })
+  await fs.mkdir(pathOutput, { recursive: true })
 
   if (await readDir(pathInput) && await readDir(pathOutput)) {
     const folder = await readDir(dir)
@@ -66,11 +63,11 @@ const SetUpEnvironment = async (dir) => {
   throw new Error('Error creating environment')
 }
 
-const execute = async (dir, options) => {
+const execute = async (dir:string) => {
   const cleanDir = await SetUpEnvironment(dir)
-  await ConvertAllImagesInFolder(cleanDir, options)
+  await ConvertAllImagesInFolder(cleanDir)
 }
 
-module.exports = {
+export default {
   execute
 }

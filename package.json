@@ -1,7 +1,7 @@
 {
   "name": "pixelite",
   "description": "Comprime as imagens de um diretório especificado, cria um backup fora do diretorio com as imagens originais e substitui as imagens do diretório especificado pelas imagens comprimidas, adicionando tambem uma versão WEBP da imagem",
-  "version": "3.0.2",
+  "version": "4.0.0",
   "main": "./lib/index.js",
   "keywords": [
     "image",
@@ -17,15 +17,22 @@
     "lib": "lib"
   },
   "scripts": {
+    "dev": "ts-node ./bin/index.ts",
+    "build": "tsc",
     "start": "node ./bin/index.js"
   },
   "bin": {
-    "pixelite": "./bin/index.js"
+    "pixelite": "./bin/index.ts"
   },
+  "types": "dist/index.d.ts",
   "author": "lkt226 <victorhugods.pereira@gmail.com>",
   "license": "MIT",
   "preferGlobal": false,
   "dependencies": {
-    "sharp": "^0.32.1"
+    "sharp": "^0.32.1",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.27"
   }
 }
