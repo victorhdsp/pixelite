@@ -21,13 +21,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - run: dir
+    - run: npm i -g pnpm
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: 'package-lock.json'
+        cache-dependency-path: 'pnpm-lock.json'
     - run: pnpm i
     - run: pnpm run build --if-present
     - run: pnpm start
