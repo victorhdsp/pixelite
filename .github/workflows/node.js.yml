@@ -20,4 +20,3 @@ jobs:
     - run: pnpm i
     - run: pnpm run build
     - run: pnpm start
-    - run: npm publish
