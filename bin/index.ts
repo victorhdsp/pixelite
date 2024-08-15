@@ -1,26 +1,29 @@
 #!/usr/bin/env node
-const root = process.cwd();
-const path = require("path");
-import converter from "../lib/index";
+import path from "node:path";
+import { argv, cwd } from "node:process";
+import { execute } from "../lib/index";
 
-const args = process.argv.splice(process.execArgv.length + 2);
+const root = cwd();
 
-const props = {
-  replace: false,
-  src: "./public",
-};
+const states: Record<string, null|string> = {
+    src: null,
+}
 
-args.forEach((arg) => {
-  if (arg.includes("--") && arg.includes("=")) {
-    const [key, value] = arg.replace("--", "").split("=");
-    if (key === 'replace') {
-      props.replace = value === 'true';
-    } else if (key === 'src') {
-      props.src = value;
+argv.forEach((arg) => {
+    const [key, value] = arg.split("=");
+
+    switch (key) {
+        case "src": states.src = path.join(root, value); break;
+    
+        default: break;
     }
-  }
-});
+})
 
-if (props.src) props.src = path.join(root, props.src);
-
-converter.execute(props.src);
+// Validação
+try {
+    if (!states.src) throw new Error("Você não enviou o campo: src");
+    execute(states.src)
+} catch (e:any) {
+    const error: Error = e;
+    console.error(error.message);
+}
