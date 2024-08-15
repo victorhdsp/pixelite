@@ -6,7 +6,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/victorhdsp/pixelite?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/victorhdsp/pixelite?style=for-the-badge)
 
-<img src="imagem.png" alt="Exemplo imagem">
+<img src="headme-hero.png" alt="Coisas de dormir, mascara, remedio, agua...">
 
 > Pixelite é um módulo NPM com a missão de converter imagens de png ou jpg para os formatos web, facilitando a vida de quem trabalha com servidores estáticos.
 
@@ -18,6 +18,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [ ] Criação de um backup das imagens para caso de problemas.
 - [ ] Modificação dos arquivos estáticos do site, substituindo <img> por <picture> com seus devidos <sources>.
 - [ ] Implementação em tempo real para JSX.
+- [ ] Utilização de inteligência artificial para construir os "alts", melhorando a acessibilidade e dando menos trabalho.
 
 ## 💻 Pré-requisitos
 
