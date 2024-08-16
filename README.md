@@ -34,7 +34,7 @@ Para instalar o pixelite, siga estas etapas:
 Linux e macOS:
 
 ```
-$ npm install
+$ npm install -D pixelite
 ```
 
 ## ☕ Usando o Pixelite
