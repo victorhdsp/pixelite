@@ -16,7 +16,4 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - run: npm i -g pnpm
-    - run: pnpm i
-    - run: pnpm run build
-    - run: pnpm start
+    - run: npm run test
