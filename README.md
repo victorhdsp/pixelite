@@ -6,7 +6,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/victorhdsp/pixelite?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/victorhdsp/pixelite?style=for-the-badge)
 
-<img src="headme-hero.png" alt="Coisas de dormir, mascara, remedio, agua...">
+<img src="./readme-hero.jpg" alt="Coisas de dormir, mascara, remedio, agua...">
 
 > Pixelite é um módulo NPM com a missão de converter imagens de png ou jpg para os formatos web, facilitando a vida de quem trabalha com servidores estáticos.
 
@@ -34,7 +34,7 @@ Para instalar o pixelite, siga estas etapas:
 Linux e macOS:
 
 ```
-$ npm install
+$ npm install -D pixelite
 ```
 
 ## ☕ Usando o Pixelite
