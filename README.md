@@ -6,7 +6,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/victorhdsp/pixelite?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/victorhdsp/pixelite?style=for-the-badge)
 
-<img src="./readme-hero.jpg" alt="Coisas de dormir, mascara, remedio, agua...">
+<img src="https://github.com/victorhdsp/pixelite/blob/master/readme-hero.jpg?raw=true" alt="Coisas de dormir, mascara, remedio, agua...">
 
 > Pixelite é um módulo NPM com a missão de converter imagens de png ou jpg para os formatos web, facilitando a vida de quem trabalha com servidores estáticos.
 
