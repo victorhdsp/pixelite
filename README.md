@@ -15,6 +15,7 @@
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas para as seguintes tarefas:
 
 - [x] Conversão dos arquivos para o formato web.
+  - [x] Adicionar sinalização de que a aplicação esta rodando de forma constante.
 - [ ] Criação de um backup das imagens para caso de problemas.
 - [ ] Modificação dos arquivos estáticos do site, substituindo <img> por <picture> com seus devidos <sources>.
 - [ ] Implementação em tempo real para JSX.
