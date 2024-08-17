@@ -3,7 +3,6 @@
   "description": "Comprime as imagens de um diretório especificado, cria um backup fora do diretorio com as imagens originais e substitui as imagens do diretório especificado pelas imagens comprimidas, adicionando tambem uma versão WEBP da imagem",
   "version": "4.0.2-2",
   "main": "./lib/index.js",
-  "type": "module",
   "keywords": [
     "image",
     "compress",
@@ -26,7 +25,7 @@
     "test": "jest"
   },
   "bin": {
-    "pixelite": "./bin/index.ts"
+    "pixelite": "./bin/index.js"
   },
   "types": "dist/index.d.ts",
   "author": "lkt226 <victorhugods.pereira@gmail.com>",
