@@ -6,9 +6,9 @@ async function convertImage(file: string) {
     renameSync(file, newFileName)
     const type = file.split(".")[1];
     const image = sharp(newFileName);
-    await image.png({quality: 98}).toFile(file.replace(type, "png"))
-    await image.webp({quality: 98}).toFile(file.replace(type, "webp"))
-    await image.avif({quality: 98}).toFile(file.replace(type, "avif"))
+    await image.png({ quality: 98 }).toFile(file.replace(type, "png"))
+    await image.webp({ quality: 98 }).toFile(file.replace(type, "webp"))
+    await image.avif({ quality: 98 }).toFile(file.replace(type, "avif"))
     rmSync(newFileName);
 }
 
@@ -18,4 +18,5 @@ export async function convertImages (files: string[]) {
         await convertImage(file);
         console.log("Convertendo imagem: ", file);
     }
+    console.log("Todas as imagens foram convertidas.");
 }
