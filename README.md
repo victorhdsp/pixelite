@@ -17,7 +17,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Conversão dos arquivos para o formato web.
   - [x] Adicionar sinalização de que a aplicação esta rodando de forma constante.
 - [x] Criação de um backup das imagens para caso de problemas.
-- [ ] Modificação dos arquivos estáticos do site, substituindo `<img>` por `<picture>` com seus devidos `<sources>`.
+- [x] Modificação dos arquivos estáticos do site, substituindo `<img>` por `<picture>` com seus devidos `<sources>`.
 - [ ] Implementação em tempo real para JSX.
 - [ ] Utilização de inteligência artificial para construir os "alts", melhorando a acessibilidade e dando menos trabalho.
 

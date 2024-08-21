@@ -11,7 +11,7 @@ describe("convertImages", () => {
     jest.clearAllMocks(); // Limpa o estado dos mocks antes de cada teste
   });
 
-  it("should convert images to png, webp, and avif", async () => {
+  it("should convert images to png, webp, avif and ignore other files", async () => {
     const mockSharp = sharp as unknown as jest.Mock;
 
     const mockPng = jest.fn().mockReturnThis();
@@ -26,7 +26,7 @@ describe("convertImages", () => {
       avif: mockAvif.mockReturnValue({ toFile: mockToFile })
     });
 
-    const files = ["image1.jpg", "image2.png"];
+    const files = ["index.html", "image1.jpg", "image2.png"];
 
     await convertImages(files);
     

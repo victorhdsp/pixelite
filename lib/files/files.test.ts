@@ -1,7 +1,7 @@
-import { cwd } from "node:process";
 import path from "node:path";
-import { cpSync, rmSync } from "node:fs";
-import { getForFiles } from "./index";
+import { cwd } from "node:process";
+import { cpSync, readdirSync, rmSync } from "node:fs";
+import { getForFiles, makeBackup } from "./index";
 
 describe("getForFiles", () => {
     const testDir = path.join(cwd(), "/tests/files/", "/out");
@@ -20,6 +20,7 @@ describe("getForFiles", () => {
         const result = getForFiles(tmpDir);
 
         expect(result).toEqual([
+            path.join(tmpDir, "/404.html"),
             path.join(tmpDir, "/img/favicon.png"),
             path.join(tmpDir, "/img/home/aboutus.png"),
             path.join(tmpDir, "/img/home/contact.png"),
@@ -34,8 +35,22 @@ describe("getForFiles", () => {
             path.join(tmpDir, "/img/home/portfolio/michelle-2.png"),
             path.join(tmpDir, "/img/home/portfolio/pamella-1.png"),
             path.join(tmpDir, "/img/home/portfolio/pamella-2.png"),
+            path.join(tmpDir, "/index.html"),
         ]);
 
         expect(console.log).toHaveBeenCalledWith("Todas as imagens foram selecionadas.");
     });
+});
+
+describe("makeBackup", () => {
+    const testDir = path.join(cwd(), "/tests/files/", "/out");
+    
+    it("Deve retornar o backup no history", () => {
+        const testHistory = path.join(cwd(), "/history");
+        makeBackup(testDir);
+
+        const history = readdirSync(testHistory);
+        expect(history).toContain("out");
+        rmSync(path.join(testHistory, "/out"), { recursive: true });
+    })
 });

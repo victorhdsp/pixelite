@@ -2,10 +2,23 @@ import { readdirSync, cpSync, rmSync, existsSync } from "node:fs";
 import path from "node:path";
 import { cwd } from "node:process";
 
+export const typeImages = ["png", "jpg"];
+export const typeMarking = ["html"];
+
+export function verifyTypeFile(types: string[], file:string) {
+    for (let i = 0; i < types.length; i++) 
+        if (file.includes(types[i])) return true;
+    return false;
+}
+
 export function filter(files:string[]) {
     return files.filter((file) => {
-        return file.includes("png") || 
-                file.includes("jpg");
+        if(verifyTypeFile(typeImages, file))
+            return true;
+        if(verifyTypeFile(typeMarking, file))
+            return true;
+
+        return false;
     })
 }
 

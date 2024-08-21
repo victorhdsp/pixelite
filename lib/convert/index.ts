@@ -1,5 +1,6 @@
 import { rmSync, renameSync } from "fs";
 import sharp from "sharp";
+import { typeImages, verifyTypeFile } from "../files";
 
 async function convertImage(file: string) {
     const newFileName = file.replace(".", "_temp.");
@@ -15,7 +16,8 @@ async function convertImage(file: string) {
 export async function convertImages (files: string[]) {
     for (let i = 0; i < files.length; i++) {
         const file = files[i];
-        await convertImage(file);
+        if (verifyTypeFile(typeImages, file))
+            await convertImage(file);
         console.log("Convertendo imagem: ", file);
     }
     console.log("Todas as imagens foram convertidas.");

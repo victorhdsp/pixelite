@@ -33,6 +33,7 @@
   "license": "MIT",
   "preferGlobal": false,
   "dependencies": {
+    "cheerio": "^1.0.0",
     "sharp": "^0.32.1"
   },
   "devDependencies": {
