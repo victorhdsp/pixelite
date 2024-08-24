@@ -19,7 +19,8 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Criação de um backup das imagens para caso de problemas.
 - [x] Modificação dos arquivos estáticos do site, substituindo `<img>` por `<picture>` com seus devidos `<sources>`.
 - [ ] Implementação em tempo real para JSX.
-- [ ] Utilização de inteligência artificial para construir os "alts", melhorando a acessibilidade e dando menos trabalho.
+- [x] Utilização de inteligência artificial para construir os "alts", melhorando a acessibilidade e dando menos trabalho.
+- [ ] Persistir as informações já criadas.
 
 ## 💻 Pré-requisitos
 

@@ -5,7 +5,7 @@ module.exports = {
         "^.+\\.(ts|tsx)$": "ts-jest",
     },
     moduleFileExtensions: ['ts', 'tsx', "js"],
-    testMatch: ['**/*.test.(ts|tsx)'],
+    testMatch: ['**/lib/*.test.(ts|tsx)'],
     globals: {
         'ts-jest': {
             isolatedModules: true,

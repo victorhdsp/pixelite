@@ -33,6 +33,7 @@
   "license": "MIT",
   "preferGlobal": false,
   "dependencies": {
+    "@google/generative-ai": "^0.17.1",
     "cheerio": "^1.0.0",
     "sharp": "^0.32.1"
   },
