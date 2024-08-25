@@ -1,8 +1,9 @@
-import _fs from "node:fs";
+import _fs, { existsSync } from "node:fs";
 import path from "node:path";
 import _sharp from "sharp";
 import { UseMetadata } from "../metadata";
 import { ImageMetadata } from "../metadata/type";
+import { stdout } from "node:process";
 
 type Sharp = typeof _sharp;
 type Fs = typeof _fs;
@@ -26,9 +27,7 @@ export default class Converter {
 
         for (let i = 0; i < metadata.length; i++) {
             const item = metadata[i];
-
-            const src = item.responsive[0].src;
-            await this.convertImage(src);
+            const { src } = item.responsive[0];
 
             item.responsive = item.responsive.map((responsive) => {
                 return {
@@ -38,11 +37,31 @@ export default class Converter {
                 };
             })
 
+            const responsive = item.responsive[0];
+            let hasExist = true;
+            responsive.extensions.forEach((ext) => {
+                if (!existsSync(`${responsive.src}.${ext}`)) 
+                    hasExist = false;
+            })
+
+            if (!hasExist) {
+                const y = [".", "..", "..."];
+                let x = 0;
+                const loading = setInterval(() => {
+                    stdout.write("\r"+y[x++]);
+                    stdout.clearLine(1);
+                    if (x >= y.length) x = 0;
+                }, 200)
+                await this.convertImage(src);
+                clearInterval(loading);
+                console.log("Imagem convertida com sucesso:", src.split("/").pop());
+            }
+            
             altedMetadata.push(item);
         }
         return this.useMetadata.write(altedMetadata);
     }
-
+    
     async convertImage(file: string) {
         const newFileName = file.replace(".", "_temp.");
         this.fs.renameSync(file, newFileName)
